@@ -1,0 +1,6 @@
+rodrigo@rodrigo.com.br;1234;Rodrigo;2026-01-04
+rodrigo2@rodrigo2.com.br;123456;rodrigo2;2026-01-04
+rodrigo@roodrigo.com.br;1234;Rodrigo;2026-01-04
+rodrigo1@rodrigo.com.br;1234;Rodrigo;2026-01-04
+rod@rod.com.br;MTIzNA==;ROD;2026-01-06
+rodg1@rodg1.com.br;MTIzNEA=;RODG1;2026-01-06

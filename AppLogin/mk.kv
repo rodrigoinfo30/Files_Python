@@ -1,0 +1,210 @@
+<CreateAccountWindow>:
+    name: "create"              # nome da tela
+    name_field: name_input      # vincula ao TextInput de nome
+    email: email_input          # vincula ao TextInput de email
+    password: pass_input        # vincula ao TextInput de senha
+
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'C:/Users/Rodrigo Santos/Documents/Bradesco/Python/Projeto/AppLogin/FundoLogin2.jpg'
+            size_hint_y: 1 # Ocupa toda a altura
+            allow_stretch: True # Permite esticar
+            keep_ratio: True # Mantém a proporção
+            # Você pode precisar ajustar pos e size se não estiver dentro de um layout que preencha tudo
+
+    FloatLayout:
+        Label:
+            text: "Criar uma conta"
+            size_hint: 0.8, 0.2
+            pos_hint: {"x":0.1, "top":1}
+            font_size: 35
+            bold: True
+            color: '#eed70bff'
+        Label:
+            text: "Nome:"
+            size_hint: 0.3, 0.1
+            pos_hint: {"x":0.1, "top":0.85}
+            font_size: 30
+            bold: True
+            color: '#eed70bff'
+        TextInput:
+            id: name_input
+            size_hint: 0.5, 0.1
+            pos_hint: {"x":0.4, "top":0.85}
+            font_size: 30
+            multiline: False
+
+        Label:
+            text: "Email:"
+            size_hint: 0.3, 0.1
+            pos_hint: {"x":0.1, "top":0.7}
+            font_size: 30
+            bold: True   
+            color: '#eed70bff'         
+        TextInput:
+            id: email_input
+            size_hint: 0.5, 0.1
+            pos_hint: {"x":0.4, "top":0.7}
+            font_size: 30
+            multiline: False
+
+        Label:
+            text: "Senha:"
+            size_hint: 0.3, 0.1
+            pos_hint: {"x":0.1, "top":0.55}
+            font_size: 30
+            bold: True
+            color: '#eed70bff'            
+        TextInput:
+            id: pass_input
+            size_hint: 0.5, 0.1
+            pos_hint: {"x":0.4, "top":0.55}
+            font_size: 30
+            multiline: False
+            password: True
+
+        Button:
+            text: "Salvar"
+            size_hint: 0.2, 0.1
+            #pos_hint: {"x":0.2, "y":0.1}
+            pos_hint: {"x":0.2, "y":0.25}
+            font_size: 20
+            background_color: '#1f84e2ff'
+            bold: True 
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit()
+
+        Button:
+            text: "Login"
+            size_hint: 0.2, 0.1
+            #pos_hint: {"x":0.2, "y":0.25}
+            pos_hint: {"x":0.2, "y":0.1}
+            font_size: 20
+            background_color: '#1f84e2ff'
+            bold: True 
+            on_release:
+                root.manager.transition.direction = "left"
+                root.login()
+
+<LoginWindow>:
+    name: "login"
+    email: email_input
+    password: pass_input
+
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'C:/Users/Rodrigo Santos/Documents/Bradesco/Python/Projeto/AppLogin/FundoLogin1.jpg'
+            size_hint_y: 1 # Ocupa toda a altura
+            allow_stretch: True # Permite esticar
+            keep_ratio: True # Mantém a proporção
+            # Você pode precisar ajustar pos e size se não estiver dentro de um layout que preencha tudo    
+
+    FloatLayout:
+        Label:
+            text: "Email:"
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.3, 0.1
+            font_size: 35
+            bold: True 
+            color: '#eed70bff'           
+        TextInput:
+            id: email_input
+            pos_hint: {"x":0.4, "top":0.9}
+            size_hint: 0.5, 0.1
+            font_size: 30
+            multiline: False
+
+        Label:
+            text: "Senha:"
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.3, 0.1
+            font_size: 35
+            bold: True
+            color: '#eed70bff'            
+        TextInput:
+            id: pass_input
+            pos_hint: {"x":0.4, "top":0.7}
+            size_hint: 0.5, 0.1
+            font_size: 30
+            multiline: False
+            password: True
+
+        Button:
+            text: "Acessar"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0.2, "y":0.25}
+            font_size: 20
+            background_color: '#1f84e2ff'
+            bold: True             
+            on_release:
+                root.manager.transition.direction = "up"
+                root.loginBtn()
+
+        Button:
+            text: "Nova Conta"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0.2, "y":0.1}
+            font_size: 20
+            background_color: '#1f84e2ff'
+            bold: True             
+            on_release:
+                root.manager.transition.direction = "right"
+                root.createBtn()
+
+
+<MainWindow>:
+    name: "main"
+    n: name_label
+    email: email_label
+    created: created_label
+
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'C:/Users/Rodrigo Santos/Documents/Bradesco/Python/Projeto/AppLogin/FundoLogin3.jpg'
+            size_hint_y: 1 # Ocupa toda a altura
+            allow_stretch: True # Permite esticar
+            keep_ratio: True # Mantém a proporção
+            # Você pode precisar ajustar pos e size se não estiver dentro de um layout que preencha tudo     
+
+    FloatLayout:
+        Label:
+            id: name_label
+            text: "Nome da conta: "
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.8, 0.1
+            font_size: 35
+            bold: True
+            color: '#eed70bff'            
+
+        Label:
+            id: email_label
+            text: "E-mail: "
+            pos_hint: {"x":0.1, "top":0.75}
+            size_hint: 0.8, 0.1
+            font_size: 35
+            bold: True
+            color: '#eed70bff'            
+
+        Label:
+            id: created_label
+            text: "Data de criação: "
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.8, 0.1
+            font_size: 35
+            bold: True
+            color: '#eed70bff'            
+
+        Button:
+            text: "Sair"
+            size_hint: 0.1, 0.1
+            pos_hint: {"x":0.2, "y":0.1}
+            font_size: 20
+            background_color: '#1f84e2ff'
+            bold: True             
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "down"
